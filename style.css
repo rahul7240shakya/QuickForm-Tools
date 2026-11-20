@@ -1,0 +1,1876 @@
+
+/* =====================================
+   1. GLOBAL CSS
+===================================== */
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #172033;
+}
+
+
+/* =====================================
+   2. HEADER & NAVBAR
+===================================== */
+
+header {
+    width: 100%;
+    background-color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    min-height: 75px;
+    padding: 15px 4%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    border-bottom: 1px solid #eeeeff;
+    width: 100%;
+}
+
+/* SPACE FOR STICKY NAVBAR */
+#pdf-tools,
+#image-tools,
+#text-tools,
+#about {
+    scroll-margin-top: 100px;
+}
+
+/* Website Logo */
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #172033;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: #6839e8;
+}
+
+/* Navigation Links */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #172033;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #6839e8;
+}
+
+/* Navbar Search */
+
+.nav-search input {
+    padding: 12px 18px;
+    width: 180px;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    background-color: #f2f1fc;
+    font-size: 14px;
+}
+
+/* Get Started Button */
+
+.nav-btn {
+    text-decoration: none;
+    background-color: #6839e8;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+.nav-btn:hover {
+    background-color: #4d24c4;
+}
+
+
+/* =====================================
+   3. HERO SECTION
+===================================== */
+
+.hero {
+    min-height: 340px;
+    padding: 65px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    background: linear-gradient(
+        120deg,
+        #f5f3ff,
+        #e9e1ff,
+        #f8f6ff
+    );
+    border-radius: 0 0 20px 20px;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+/* Hero Tagline */
+
+.tagline {
+    display: inline-block;
+    padding: 9px 16px;
+    background-color: #e4d8ff;
+    color: #6839e8;
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Main Heading */
+
+.hero h1 {
+    font-size: 45px;
+    line-height: 1.2;
+    margin-bottom: 18px;
+    color: #172033;
+}
+
+.hero h1::first-line {
+    color: #172033;
+}
+
+/* Hero Description */
+
+.hero-description {
+    font-size: 17px;
+    color: #626b80;
+    line-height: 1.6;
+    margin-bottom: 22px;
+}
+
+/* Hero Search Bar */
+
+.hero-search {
+    display: flex;
+    max-width: 600px;
+    background-color: white;
+    padding: 6px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px #6839e81a;
+}
+
+.hero-search input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    padding: 12px;
+    font-size: 14px;
+}
+
+.hero-search button {
+    border: none;
+    background-color: #6839e8;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 9px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.hero-search button:hover {
+    background-color: #4d24c4;
+}
+
+/* Hero Features */
+
+.hero-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 22px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #343c55;
+}
+
+
+/* Hero Illustration */
+
+.hero-visual {
+    width: 350px;
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.visual-card {
+    width: 260px;
+    padding: 35px 20px;
+    text-align: center;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px #6839e82a;
+    transform: rotate(-4deg);
+}
+
+.visual-card span {
+    font-size: 55px;
+}
+
+.visual-card h2 {
+    font-size: 24px;
+    margin: 12px 0;
+    color: #6839e8;
+}
+
+.visual-card p {
+    color: #687085;
+    font-size: 14px;
+}
+
+
+/* =====================================
+   4. POPULAR TOOLS SECTION
+===================================== */
+
+.popular-tools {
+    padding: 55px 5%;
+}
+
+/* Section Heading */
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-heading h2 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.section-heading h2 span {
+    color: #6839e8;
+}
+
+.section-heading p {
+    color: #687085;
+    font-size: 15px;
+}
+
+/* TOOLS CONTAINER */
+.tools-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 300px));
+    justify-content: center;
+    gap: 25px;
+}
+
+/* Individual Tool Cards */
+
+.tool-card {
+    padding: 25px 15px;
+    text-align: center;
+    background-color: white;
+    border: 1px solid #e8e8f5;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px #1720330a;
+    transition: 0.3s;
+}
+
+.tool-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px #6839e81a;
+    border-color: #c9b8ff;
+}
+
+.tool-icon {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.tool-card h3 {
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+.tool-card p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #687085;
+    min-height: 42px;
+    margin-bottom: 15px;
+}
+
+.tool-card a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background-color: #6839e8;
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.tool-card a:hover {
+    background-color: #4d24c4;
+}
+
+
+/* =====================================
+   5. TOOL CATEGORIES SECTION
+===================================== */
+
+.categories-section {
+    padding: 25px 4% 45px;
+}
+
+.categories-content h2 {
+    font-size: 27px;
+    margin-bottom: 8px;
+}
+
+.categories-content h2 span {
+    color: #6839e8;
+}
+
+.categories-content > p {
+    color: #687085;
+    margin-bottom: 22px;
+}
+
+/* Category Container */
+
+.category-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+/* Category Cards */
+
+.category-card {
+    padding: 22px;
+    background-color: #ffffff;
+    border: 1px solid #e8e8f5;
+    border-radius: 14px;
+    box-shadow: 0 5px 20px #1720330a;
+    transition: 0.3s;
+}
+
+.category-card:hover {
+    transform: translateY(-4px);
+    border-color: #c9b8ff;
+}
+
+.category-icon {
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.category-card h3 {
+    font-size: 17px;
+    margin-bottom: 9px;
+}
+
+.category-card p {
+    color: #687085;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.category-card a {
+    text-decoration: none;
+    color: #6839e8;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* =====================================
+   6. ABOUT SECTION
+===================================== */
+
+.about-section {
+    margin: 15px 4% 35px;
+    padding: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    background: linear-gradient(
+        120deg,
+        #f5f3ff,
+        #eeebff
+    );
+    border-radius: 22px;
+}
+
+.about-content {
+    max-width: 600px;
+}
+
+.about-content h2 {
+    font-size: 27px;
+    margin-bottom: 18px;
+}
+
+.about-content h2 span {
+    color: #6839e8;
+}
+
+.about-content p {
+    color: #626b80;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+.about-content a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background-color: #6839e8;
+    padding: 11px 22px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.about-visual {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.about-visual span {
+    font-size: 45px;
+}
+
+
+/* =====================================
+   7. FOOTER
+===================================== */
+
+footer {
+    background-color: #17213f;
+    color: white;
+    padding: 25px 4% 15px;
+}
+
+/* Footer Content */
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+.footer-logo h2 {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.footer-logo h2 span {
+    color: #a78bfa;
+}
+
+.footer-logo p {
+    font-size: 13px;
+    color: #c5c9d8;
+}
+
+/* Footer Links */
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: #a78bfa;
+}
+
+/* Copyright */
+
+.copyright {
+    border-top: 1px solid #ffffff25;
+    text-align: center;
+    padding-top: 15px;
+    font-size: 12px;
+    color: #c5c9d8;
+}
+
+
+/* =====================================
+   8. RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 1000px) {
+
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .tools-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .navbar {
+        justify-content: center;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 5%;
+    }
+
+    .hero-visual {
+        width: 100%;
+    }
+
+    .hero-search {
+        width: 100%;
+    }
+
+    .hero-features {
+        justify-content: center;
+    }
+
+    .tools-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .category-container {
+        grid-template-columns: 1fr;
+    }
+
+    .about-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .nav-search input {
+        width: 100%;
+    }
+
+    .nav-search {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero-search button {
+        padding: 12px 15px;
+    }
+
+    .tools-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-links {
+        justify-content: center;
+        gap: 15px;
+    }
+
+}
+
+/* Word count */
+
+.counter-section {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.counter-section h2 {
+    color: #25213b;
+    margin-bottom: 10px;
+}
+
+.counter-section textarea {
+    width: 100%;
+    height: 180px;
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    resize: vertical;
+    outline: none;
+}
+
+.counter-section textarea:focus {
+    border-color: #7047eb;
+}
+
+.counter-results {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.counter-results div {
+    flex: 1;
+    padding: 18px;
+    text-align: center;
+    background: #f5f2ff;
+    border-radius: 10px;
+}
+
+.counter-results h3 {
+    color: #7047eb;
+    font-size: 26px;
+}
+
+
+.clear-button {
+    margin-top: 15px;
+    padding: 10px 22px;
+    background: #7047eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.clear-button:hover {
+    background: #5832c7;
+}
+
+/* Word counter window */
+
+/* Modal Background */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.55);
+backdrop-filter: blur(8px);
+-webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+/* Modal Box */
+.modal-box {
+    background: #ffffff;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* Modal Header */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.modal-header h2 {
+    font-size: 22px;
+    color: #25213b;
+}
+
+/* Cross Button */
+.modal-close {
+    border: none;
+    background: transparent;
+    font-size: 30px;
+    cursor: pointer;
+    color: #666;
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
+}
+
+.modal-close:hover {
+    background: #f1f1f5;
+}
+
+/* Modal Content */
+.modal-content p {
+    color: #666;
+    margin-bottom: 12px;
+}
+
+.modal-content textarea {
+    width: 100%;
+    height: 180px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    resize: vertical;
+    font-size: 16px;
+}
+
+.modal-content textarea:focus {
+    outline: none;
+    border-color: #7047eb;
+}
+
+/* Highlight animation */
+
+@keyframes sectionHighlight {
+    0% {
+        transform: translateY(0);
+        box-shadow: 0 0 0 transparent;
+    }
+
+    30% {
+        transform: translateY(-8px);
+        box-shadow: 0 0 50px rgba(124, 58, 237, 0.5);
+    }
+
+    100% {
+        transform: translateY(0);
+        box-shadow: 0 0 0 transparent;
+    }
+}
+
+.highlight-section {
+    animation: sectionHighlight 1.2s ease;
+}
+
+
+/* ================================== */
+/* CASE CONVERTER BUTTONS */
+/* ================================== */
+
+.case-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+/* COMMON BUTTON DESIGN */
+
+.case-buttons button {
+    padding: 11px 18px;
+    border: 1px solid #7c3aed;
+    border-radius: 8px;
+    background-color: white;
+    color: #7c3aed;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* BUTTON HOVER EFFECT */
+
+.case-buttons button:hover {
+    background-color: #7c3aed;
+    color: white;
+    transform: translateY(-2px);
+}
+
+
+
+/* =====================================
+   PDF COMPRESSOR MODAL
+===================================== */
+
+/* PDF Upload Area */
+
+.pdf-upload-area {
+    border: 2px dashed #b9a2f5;
+    background-color: #faf8ff;
+    border-radius: 12px;
+    padding: 35px 20px;
+    text-align: center;
+    margin: 20px 0;
+    transition: 0.3s;
+}
+
+.pdf-upload-area:hover {
+    border-color: #6839e8;
+    background-color: #f5f1ff;
+}
+
+/* Hide Default File Input */
+
+#pdfInput {
+    display: none;
+}
+
+/* Choose PDF Button */
+
+.pdf-upload-area label {
+    display: inline-block;
+    background-color: #6839e8;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.pdf-upload-area label:hover {
+    background-color: #4d24c4;
+}
+
+/* Upload Text */
+
+#pdfFileName {
+    color: #77718a;
+    font-size: 13px;
+    margin-top: 12px;
+    word-break: break-word;
+}
+
+/* Compress PDF Button */
+
+#compressPdfBtn {
+    width: 100%;
+    padding: 14px;
+    background-color: #6839e8;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#compressPdfBtn:hover {
+    background-color: #4d24c4;
+}
+
+#compressPdfBtn:disabled {
+    background-color: #b9a8e8;
+    cursor: not-allowed;
+}
+
+/* PDF Result */
+
+#pdfResult {
+    margin-top: 20px;
+    text-align: center;
+    color: #172033;
+    font-size: 14px;
+}
+
+/* REMOVE PDF BUTTON */
+#removePdfBtn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    background-color: #fff1f1;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#removePdfBtn:hover {
+    background-color: #fee2e2;
+}
+
+
+/* PDF COMPRESSION LOADING SPINNER */
+
+#compressPdfBtn.is-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Loading animation */
+
+#compressPdfBtn.is-loading::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: pdfSpinner 0.8s linear infinite;
+}
+
+@keyframes pdfSpinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+/* =====================================
+   IMAGE RESIZER AND COMPRESSOR
+===================================== */
+
+/* Image Upload Buttons */
+
+#resizeImageInput,
+#compressImageInput {
+    display: none;
+}
+
+/* Image Tool Upload Area */
+
+#resizeModal .pdf-upload-area label,
+#compressImageModal .pdf-upload-area label {
+    display: inline-block;
+    background-color: #6839e8;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#resizeModal .pdf-upload-area label:hover,
+#compressImageModal .pdf-upload-area label:hover {
+    background-color: #4d24c4;
+}
+
+/* Selected Image File Name */
+
+#resizeImageFileName,
+#compressImageFileName {
+    color: #77718a;
+    font-size: 13px;
+    margin-top: 12px;
+    word-break: break-word;
+}
+
+/* Main Action Buttons */
+
+#resizeImageBtn,
+#compressImageBtn {
+    width: 100%;
+    padding: 14px;
+    background-color: #6839e8;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#resizeImageBtn:hover,
+#compressImageBtn:hover {
+    background-color: #4d24c4;
+}
+
+#resizeImageBtn:disabled,
+#compressImageBtn:disabled {
+    background-color: #b9a8e8;
+    cursor: not-allowed;
+}
+
+/* Image Results */
+
+#resizeImageResult,
+#compressImageResult {
+    margin-top: 20px;
+    text-align: center;
+    color: #172033;
+    font-size: 14px;
+}
+
+/* Remove Image Buttons */
+
+#removeResizeImageBtn,
+#removeCompressImageBtn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    background-color: #fff1f1;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#removeResizeImageBtn:hover,
+#removeCompressImageBtn:hover {
+    background-color: #fee2e2;
+}
+
+/* =====================================
+   ABOUT MODAL
+===================================== */
+
+.about-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.about-modal-content {
+    background: #ffffff;
+    width: 100%;
+    max-width: 650px;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 35px;
+    border-radius: 16px;
+    position: relative;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.about-modal-content h2 {
+    color: #172033;
+    margin-bottom: 18px;
+}
+
+.about-modal-content h2 span {
+    color: #6839e8;
+}
+
+.about-modal-content h3 {
+    color: #6839e8;
+    margin-top: 22px;
+    margin-bottom: 10px;
+}
+
+.about-modal-content p,
+.about-modal-content li {
+    color: #555b6e;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+.about-modal-content ul {
+    padding-left: 22px;
+}
+
+.about-close {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    border: none;
+    background: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #555b6e;
+}
+
+.about-modal-tagline {
+    margin-top: 22px;
+    color: #6839e8 !important;
+    font-weight: bold;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .about-modal-content {
+        padding: 28px 20px;
+    }
+}
+
+/* =====================================
+   REVIEWS BUTTON DESIGN
+===================================== */
+
+#openReviews {
+    background: #0f766e;
+    color: #ffffff;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: visible;
+}
+
+/* Reviews Button Hover Effect */
+
+#openReviews:hover {
+    background: #115e59;
+    transform: translateY(-2px);
+}
+
+
+/* =====================================
+   REVIEWS BUTTON STAR ANIMATION
+===================================== */
+
+#openReviews {
+    position: relative;
+    overflow: visible;
+}
+
+#openReviews::after {
+    content: "★★★★★";
+    position: absolute;
+    top: -42px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    color: #fbbf24;
+    font-size: 27px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    text-shadow: 0 2px 8px rgba(251, 191, 36, 0.4);
+}
+
+#openReviews:hover::after {
+    animation: starPop 1s ease-out;
+}
+
+@keyframes starPop {
+    0% {
+        transform: translateX(-50%) translateY(12px) scale(0);
+        opacity: 0;
+    }
+
+    35% {
+        transform: translateX(-50%) translateY(-5px) scale(1.3);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(-25px) scale(0.9);
+        opacity: 0;
+    }
+}
+
+
+/* =====================================
+   LEARN MORE BOOK ANIMATION
+===================================== */
+
+#aboutLearnMore {
+    position: relative;
+    display: inline-block;
+}
+
+#aboutLearnMore::after {
+    content: "📚 ✨ 📖";
+    position: absolute;
+    top: -48px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    font-size: 29px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.2));
+}
+
+#aboutLearnMore:hover::after {
+    animation: bookPop 1s ease-out;
+}
+
+@keyframes bookPop {
+    0% {
+        transform: translateX(-50%) translateY(12px) scale(0);
+        opacity: 0;
+    }
+
+    35% {
+        transform: translateX(-50%) translateY(-5px) scale(1.3);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(-25px) scale(0.9);
+        opacity: 0;
+    }
+}
+
+
+/* Learn More Button Hover Effect */
+
+#aboutLearnMore {
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+#aboutLearnMore:hover {
+    transform: translateY(-2px);
+}
+
+/* =====================================
+   REVIEWS MODAL
+===================================== */
+
+.reviews-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 10000;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 20px;
+}
+
+.reviews-modal-content {
+    background: linear-gradient(135deg, #ffffff, #f0fdfa);
+    width: 100%;
+    max-width: 750px;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 35px;
+    border-radius: 22px 22px 22px 22px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    animation: reviewsSlideUp 0.5s ease forwards;
+}
+
+@keyframes reviewsSlideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Close Button */
+
+.reviews-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    font-size: 30px;
+    color: #475569;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.reviews-close:hover {
+    color: #0f766e;
+    transform: rotate(90deg);
+}
+
+/* Reviews Heading */
+
+.reviews-stars {
+    color: #f59e0b;
+    font-size: 32px;
+    letter-spacing: 5px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.reviews-modal-content h2 {
+    text-align: center;
+    color: #172033;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.reviews-modal-content h2 span {
+    color: #0f766e;
+}
+
+.reviews-subtitle {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 28px;
+}
+
+/* Reviews Container */
+
+.reviews-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+/* Mobile Layout */
+
+@media (max-width: 600px) {
+    .reviews-modal-content {
+        padding: 28px 18px;
+    }
+
+    .reviews-modal-content h2 {
+        font-size: 22px;
+    }
+
+    .reviews-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =====================================
+   REVIEWS SECTION
+===================================== */
+
+.reviews-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.no-reviews {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 25px 15px;
+    background: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    border-radius: 14px;
+}
+
+.empty-stars {
+    color: #f59e0b;
+    font-size: 28px;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+}
+
+.no-reviews h3 {
+    color: #172033;
+    margin-bottom: 8px;
+}
+
+.no-reviews p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* =====================================
+   WRITE A REVIEW FORM
+===================================== */
+
+.review-form {
+    background: #f8fafc;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+}
+
+.review-form h3 {
+    color: #172033;
+    font-size: 21px;
+    margin-bottom: 20px;
+}
+
+.review-form label {
+    display: block;
+    color: #334155;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 14px 0 8px;
+}
+
+.review-form input,
+.review-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+    outline: none;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    background: #ffffff;
+    transition: 0.3s ease;
+}
+
+.review-form input:focus,
+.review-form textarea:focus {
+    border-color: #0f766e;
+    box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
+}
+
+.review-form textarea {
+    resize: vertical;
+}
+
+/* =====================================
+   STAR RATING
+===================================== */
+
+.rating-input {
+    display: flex;
+    gap: 8px;
+}
+
+.rating-input button {
+    background: transparent;
+    border: none;
+    color: #cbd5e1;
+    font-size: 32px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.rating-input button:hover {
+    color: #f59e0b;
+    transform: scale(1.15);
+}
+
+.rating-input button.active {
+    color: #f59e0b;
+}
+
+/* =====================================
+   SUBMIT REVIEW BUTTON
+===================================== */
+
+#submitReview {
+    margin-top: 20px;
+    padding: 12px 24px;
+    background: #0f766e;
+    color: #ffffff;
+    border: none;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#submitReview:hover {
+    background: #115e59;
+    transform: translateY(-2px);
+}
+
+/* =====================================
+   RESPONSIVE REVIEW DESIGN
+===================================== */
+
+@media (max-width: 600px) {
+    .reviews-container {
+        grid-template-columns: 1fr;
+    }
+
+    .review-form {
+        padding: 18px;
+    }
+}
+
+
+/* =====================================
+   REVIEWS MODAL SCROLLBAR
+===================================== */
+
+.reviews-modal-content {
+    scrollbar-width: thin;
+    scrollbar-color: #0f766e #f1f5f9;
+}
+
+.reviews-modal-content::-webkit-scrollbar {
+    width: 7px;
+}
+
+.reviews-modal-content::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 20px;
+    margin: 15px 0;
+}
+
+.reviews-modal-content::-webkit-scrollbar-thumb {
+    background: #0f766e;
+    border-radius: 20px;
+}
+
+.reviews-modal-content::-webkit-scrollbar-thumb:hover {
+    background: #115e59;
+}
+
+
+/* =====================================
+   REVIEW CARD DESIGN
+===================================== */
+
+.review-card {
+    background: #ffffff;
+    padding: 22px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+
+    animation: reviewCardAppear 0.4s ease;
+    transition: all 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-4px);
+    border-color: #c4b5fd;
+    box-shadow: 0 10px 25px rgba(104, 57, 232, 0.10);
+}
+
+.review-card h4 {
+    color: #172033;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.review-card-stars {
+    color: #f59e0b;
+    font-size: 20px;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.review-card p {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+@keyframes reviewCardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =====================================
+   REVIEW RATING GROUPS
+===================================== */
+
+.review-group {
+    background: #f8fafc;
+    padding: 18px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 18px;
+}
+
+.review-group h3 {
+    color: #0f766e;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.review-group-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+/* =====================================
+   SEE MORE BUTTON
+===================================== */
+
+.see-more-btn {
+    display: block;
+    margin: 15px auto 0;
+    padding: 9px 20px;
+    background: #ffffff;
+    color: #0f766e;
+    border: 1px solid #0f766e;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.see-more-btn:hover {
+    background: #0f766e;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+
+/* =====================================
+   REVIEW EMOJI CURSOR
+===================================== */
+
+#reviewEmojiCursor {
+    position: fixed;
+    z-index: 20000;
+    pointer-events: none;
+    font-size: 27px;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.15s ease;
+}
+
+/* =====================================
+   HELPFUL BUTTON STYLING
+===================================== */
+
+.helpful-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    margin-top: 12px;
+
+    background: #f3f0ff;
+    color: #6839e8;
+
+    border: 1px solid #d9ccff;
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.helpful-btn:hover:not(:disabled) {
+    background: #6839e8;
+    color: #ffffff;
+    border-color: #6839e8;
+    transform: translateY(-2px);
+}
+
+.helpful-btn:disabled {
+    background: #e9f8ef;
+    color: #15803d;
+    border-color: #bbebca;
+    cursor: default;
+    opacity: 1;
+}
+
+/* =====================================
+   SEE MORE / SEE LESS BUTTON
+===================================== */
+
+.see-more-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 9px 18px;
+
+    background: #ffffff;
+    color: #6839e8;
+
+    border: 1px solid #6839e8;
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.see-more-btn:hover {
+    background: #6839e8;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* =====================================
+   DARK MODE TOGGLE BUTTON
+===================================== */
+
+.theme-toggle {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f1f5f9;
+    color: #172033;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 50%;
+
+    font-size: 19px;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: #6839e8;
+    color: #ffffff;
+    transform: rotate(15deg);
+}
+
+/* =====================================
+   DARK MODE - GLOBAL THEME
+===================================== */
+
+body.dark-mode {
+    background-color: #0f172a;
+    color: #e2e8f0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Header and Navbar */
+
+body.dark-mode header {
+    background-color: #111827;
+}
+
+body.dark-mode .navbar {
+    border-bottom-color: #334155;
+}
+
+body.dark-mode .logo,
+body.dark-mode .nav-links a {
+    color: #e2e8f0;
+}
+
+/* Hero Section */
+
+body.dark-mode .hero {
+    background: linear-gradient(120deg, #1e1b4b, #25204a, #111827);
+}
+
+body.dark-mode .hero h1 {
+    color: #ffffff;
+}
+
+body.dark-mode .hero-description,
+body.dark-mode .hero-features {
+    color: #cbd5e1;
+}
+
+/* Tools Section */
+
+body.dark-mode .tool-card {
+    background-color: #1e293b;
+    border-color: #334155;
+}
+
+body.dark-mode .tool-card h3 {
+    color: #ffffff;
+}
+
+body.dark-mode .tool-card p {
+    color: #cbd5e1;
+}
+
+body.dark-mode .section-heading p {
+    color: #94a3b8;
+}
+
+/* Dark Mode Logo */
+
+body.dark-mode .logo {
+    color: #ffffff;
+}
+
+/* Hero Main Heading */
+
+body.dark-mode .hero h1 {
+    color: #ffffff;
+}

@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QuickForm Tools - Online Utility Tools</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <!-- NAVIGATION BAR -->
+        <nav class="navbar">
+
+            <!-- LOGO -->
+            <a href="#" class="logo">
+                QuickForm <span>Tools</span>
+            </a>
+
+            <!-- NAVIGATION LINKS -->
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#pdf-tools">PDF Tools</a></li>
+                <li><a href="#image-tools">Image Tools</a></li>
+                <li><a href="#text-tools">Text Tools</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+
+            <!-- SEARCH BAR -->
+            <div class="nav-search">
+                <input type="text" id="navbarSearch" name="navbarSearch" placeholder="Search tools...">
+            </div>
+
+            <!-- GET STARTED BUTTON -->
+            <a href="#popular-tools" class="nav-btn">
+                Get Started →
+            </a>
+<!-- DARK MODE TOGGLE -->
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Enable dark mode">
+    🌙
+</button>
+        </nav>
+
+    </header>
+
+    
+
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <p class="tagline">
+                    ✨ Your Everyday Tools, One Simple Platform
+                </p>
+
+                <h1>
+                    QuickForm Tools
+                    <br>
+                    Work Smarter, Not Harder!
+                </h1>
+
+                <p class="hero-description">
+                    Free online tools for PDF, images and text.
+                    Fast, easy and secure.
+                </p>
+
+                <div class="hero-search">
+                    <input type="text" id="heroSearch" name="heroSearch" placeholder="Search for tools (e.g. PDF Compressor...)">
+
+                    <button type="button">Search</button>
+                </div>
+
+                <div class="hero-features">
+                    <span>✔ 100% Free</span>
+                    <span>✔ No Signup</span>
+                    <span>✔ Works on Any Device</span>
+                </div>
+
+            </div>
+
+            <div class="hero-visual">
+                <!-- Illustration will be designed using CSS later -->
+                <div class="visual-card">
+                    <span>⚡</span>
+                    <h2>Fast & Free</h2>
+                    <p>PDF · Images · Text</p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- POPULAR TOOLS SECTION -->
+        
+<!-- ALL TOOLS SECTION START -->
+<div id="popular-tools">
+
+    <!-- PDF TOOLS SECTION START -->
+    <section class="popular-tools" id="pdf-tools">
+
+        <div class="section-heading">
+            <h2>PDF <span>Tools</span></h2>
+            <p>Tools to manage your PDF files</p>
+        </div>
+
+        <div class="tools-container">
+
+            <!-- PDF COMPRESSOR CARD -->
+            <div class="tool-card">
+                <div class="tool-icon">📕</div>
+                <h3>PDF Compressor</h3>
+                <p>Reduce PDF file size instantly.</p>
+                <a href="#" class="open-tool">Use Tool →</a>
+            </div>
+
+        </div>
+
+    </section>
+    <!-- PDF TOOLS SECTION END -->
+
+
+    <!-- IMAGE TOOLS SECTION START -->
+    <section class="popular-tools" id="image-tools">
+
+        <div class="section-heading">
+            <h2>Image <span>Tools</span></h2>
+            <p>Tools to resize and compress your images</p>
+        </div>
+
+        <div class="tools-container">
+
+            <!-- IMAGE RESIZER CARD -->
+            <div class="tool-card">
+                <div class="tool-icon">🖼️</div>
+                <h3>Image Resizer</h3>
+                <p>Resize images easily.</p>
+                <a href="#" class="open-tool">Use Tool →</a>
+            </div>
+
+            <!-- IMAGE COMPRESSOR CARD -->
+            <div class="tool-card">
+                <div class="tool-icon">✨</div>
+                <h3>Image Compressor</h3>
+                <p>Compress images without quality loss.</p>
+                <a href="#" class="open-tool">Use Tool →</a>
+            </div>
+
+        </div>
+
+    </section>
+    <!-- IMAGE TOOLS SECTION END -->
+
+
+    <!-- TEXT TOOLS SECTION START -->
+    <section class="popular-tools" id="text-tools">
+
+        <div class="section-heading">
+            <h2>Text <span>Tools</span></h2>
+            <p>Tools to count and convert your text</p>
+        </div>
+
+        <div class="tools-container">
+
+            <!-- WORD COUNTER CARD -->
+            <div class="tool-card">
+                <div class="tool-icon">🔤</div>
+                <h3>Word & Character Counter</h3>
+                <p>Count words and characters in real-time.</p>
+                <a href="#" class="open-word-counter">Use Tool →</a>
+            </div>
+
+            <!-- CASE CONVERTER CARD -->
+            <div class="tool-card">
+                <div class="tool-icon">🔠</div>
+                <h3>Case Converter</h3>
+                <p>Convert text to upper, lower or title case.</p>
+                <a href="#" class="open-tool">Use Tool →</a>
+            </div>
+
+        </div>
+
+    </section>
+    <!-- TEXT TOOLS SECTION END -->
+
+</div>
+<!-- ALL TOOLS SECTION END -->
+
+
+<!-- Word counter overlay start-->
+<!-- Modal Overlay -->
+<div class="modal-overlay" id="toolModal">
+
+    <!-- Reusable Modal Box -->
+    <div class="modal-box">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+            <h2 id="modalTitle">Word & Character Counter</h2>
+
+            <button class="modal-close" id="modalClose">
+                &times;
+            </button>
+        </div>
+
+        <!-- Modal Content -->
+        <div class="modal-content">
+
+            <p>Count words and characters instantly.</p>
+
+            <textarea
+                id="textInput"
+                placeholder="Type or paste your text here..."
+            ></textarea>
+
+            <button id="clearButton" class="clear-button">
+                Clear Text
+            </button>
+
+            <div class="counter-results">
+
+                <div>
+                    <h3 id="wordCount">0</h3>
+                    <p>Words</p>
+                </div>
+
+                <div>
+                    <h3 id="characterCount">0</h3>
+                    <p>Characters</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<!--WORD COUNTER OVERLAY END --> 
+
+
+<!-- PDF COMPRESSOR MODAL START -->
+<div class="modal-overlay" id="pdfModal">
+
+    <div class="modal-box">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+            <h2>PDF Compressor</h2>
+            <button class="modal-close" id="pdfModalClose">&times;</button>
+        </div>
+
+        <!-- Modal Content -->
+        <div class="modal-content">
+
+            <p>Reduce your PDF file size easily.</p>
+
+            <!-- PDF Upload -->
+            <div class="pdf-upload-area">
+                <input type="file" id="pdfInput" accept=".pdf">
+
+                <label for="pdfInput">
+                    📄 Choose PDF File
+                </label>
+
+                <p id="pdfFileName">No file selected</p>
+            </div>
+
+            <!-- Compress Button -->
+            <button type="button" id="compressPdfBtn">
+             Compress PDF
+            </button>
+
+            <!-- Result -->
+            <div id="pdfResult"></div>
+            <button id="removePdfBtn" style="display: none;">
+            ✕ Remove File
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- PDF COMPRESSOR MODAL END -->
+
+<!-- IMAGE RESIZER MODAL START -->
+<div class="modal-overlay" id="resizeModal">
+
+    <div class="modal-box">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+            <h2>Image Resizer</h2>
+            <button class="modal-close" id="resizeModalClose">&times;</button>
+        </div>
+
+        <!-- Modal Content -->
+        <div class="modal-content">
+
+            <p>Resize your image easily.</p>
+
+            <!-- Image Upload -->
+            <div class="pdf-upload-area">
+
+                <input type="file" id="resizeImageInput" accept="image/*">
+
+                <label for="resizeImageInput">
+                    🖼️ Choose Image
+                </label>
+
+                <p id="resizeImageFileName">No image selected</p>
+
+            </div>
+
+            <!-- Resize Button -->
+            <button type="button" id="resizeImageBtn">
+                Resize Image
+            </button>
+
+            <!-- Processing Result -->
+            <div id="resizeImageResult"></div>
+
+            <!-- Remove Image Button -->
+            <button type="button" id="removeResizeImageBtn" style="display: none;">
+                ✕ Remove Image
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- IMAGE RESIZER MODAL END -->
+
+<!-- IMAGE COMPRESSOR MODAL START -->
+<div class="modal-overlay" id="compressImageModal">
+
+    <div class="modal-box">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+            <h2>Image Compressor</h2>
+            <button class="modal-close" id="compressImageModalClose">&times;</button>
+        </div>
+
+        <!-- Modal Content -->
+        <div class="modal-content">
+
+            <p>Reduce your image file size easily.</p>
+
+            <!-- Image Upload -->
+            <div class="pdf-upload-area">
+
+                <input type="file" id="compressImageInput" accept="image/*">
+
+                <label for="compressImageInput">
+                    ✨ Choose Image
+                </label>
+
+                <p id="compressImageFileName">No image selected</p>
+
+            </div>
+
+            <!-- Compression Button -->
+            <button type="button" id="compressImageBtn">
+                Compress Image
+            </button>
+
+            <!-- Compression Result -->
+            <div id="compressImageResult"></div>
+
+            <!-- Remove Image Button -->
+            <button type="button" id="removeCompressImageBtn" style="display: none;">
+                ✕ Remove Image
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- IMAGE COMPRESSOR MODAL END -->
+
+<!-- ================================== -->
+<!-- CASE CONVERTER MODAL START -->
+<!-- ================================== -->
+
+<div class="modal-overlay" id="caseModal">
+
+    <!-- CASE CONVERTER POPUP BOX -->
+    <div class="modal-box">
+
+        <!-- MODAL HEADER: TITLE AND CLOSE BUTTON -->
+        <div class="modal-header">
+
+            <!-- TOOL NAME -->
+            <h2>Case Converter</h2>
+
+            <!-- CLOSE BUTTON -->
+            <button class="modal-close" id="caseModalClose">
+                &times;
+            </button>
+
+        </div>
+        <!-- MODAL HEADER END -->
+
+
+        <!-- MODAL MAIN CONTENT START -->
+        <div class="modal-content">
+
+            <!-- TOOL DESCRIPTION -->
+            <p>Convert your text into different cases.</p>
+
+            <!-- TEXT INPUT AREA -->
+            <textarea
+                id="caseInput"
+                placeholder="Type or paste your text here..."
+            ></textarea>
+
+
+            <!-- CASE CONVERSION BUTTONS START -->
+            <div class="case-buttons">
+
+                <!-- CONVERT TEXT TO UPPERCASE -->
+                <button id="upperCase">UPPERCASE</button>
+
+                <!-- CONVERT TEXT TO LOWERCASE -->
+                <button id="lowerCase">lowercase</button>
+
+                <!-- CONVERT TEXT TO TITLE CASE -->
+                <button id="titleCase">Title Case</button>
+
+                <!-- CONVERT TEXT TO SENTENCE CASE -->
+                <button id="sentenceCase">Sentence case</button>
+
+            </div>
+            <!-- CASE CONVERSION BUTTONS END -->
+
+        </div>
+        <!-- MODAL MAIN CONTENT END -->
+
+    </div>
+    <!-- CASE CONVERTER POPUP BOX END -->
+
+</div>
+
+<!-- ================================== -->
+<!-- CASE CONVERTER MODAL END -->
+<!-- ================================== -->
+
+<!-- ABOUT SECTION -->
+        <section class="about-section" id="about">
+
+            <div class="about-content">
+
+                <h2>About <span>QuickForm Tools</span></h2>
+
+                <p>
+                    We're on a mission to make everyday online tasks
+                    simple, fast and accessible for everyone.
+
+                    Whether you need to compress a PDF, resize an image
+                    or count words, we've got you covered!
+                </p>
+
+                <a href="#" id="aboutLearnMore">Learn More →</a>
+                <button id="openReviews">Reviews ⭐</button>
+
+            </div>
+
+            <div class="about-visual">
+                <span>💻</span>
+                <span>💡</span>
+                <span>📝</span>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ABOUT MODAL -->
+<div class="about-modal" id="aboutModal">
+
+    <div class="about-modal-content">
+
+        <button class="about-close" id="aboutClose">&times;</button>
+
+        <h2>Welcome to <span>QuickForm Tools</span></h2>
+
+        <p>
+            QuickForm Tools is an all-in-one online platform
+            designed to make everyday digital tasks simple,
+            fast and accessible for everyone.
+        </p>
+
+        <h3>Our Tools</h3>
+
+        <ul>
+            <li>PDF Compressor – Reduce PDF file size.</li>
+            <li>Image Resizer – Resize images easily.</li>
+            <li>Image Compressor – Compress images efficiently.</li>
+            <li>Word Counter – Count words and characters.</li>
+            <li>Case Converter – Change text into different cases.</li>
+        </ul>
+
+        <h3>Why Choose QuickForm?</h3>
+
+        <p>
+            Simple interface, easy-to-use tools and a smooth
+            experience for your everyday digital needs.
+        </p>
+
+        <h3>Our Mission</h3>
+
+        <p>
+            Our mission is to make useful online tools
+            accessible to everyone without unnecessary complexity.
+        </p>
+
+        <p class="about-modal-tagline">
+            Simple Tools. Big Help.
+        </p>
+
+    </div>
+
+</div>
+
+<!-- REVIEWS MODAL -->
+<div class="reviews-modal" id="reviewsModal">
+
+    <div class="reviews-modal-content">
+
+        <button class="reviews-close" id="reviewsClose">&times;</button>
+
+        <div class="reviews-stars">★★★★★</div>
+
+        <h2>What People Say About <span>QuickForm</span></h2>
+
+        <p class="reviews-subtitle">
+            Your feedback makes QuickForm better!
+        </p>
+
+        
+<div class="reviews-container" id="reviewsContainer">
+    <div class="no-reviews">
+        <div class="empty-stars">★★★★★</div>
+        <h3>Be the First to Review!</h3>
+        <p>Your feedback helps us improve QuickForm.</p>
+    </div>
+</div>
+
+<!-- WRITE A REVIEW -->
+<div class="review-form">
+
+    <h3>Write Your Review ✍️</h3>
+
+    <label for="reviewName">Your Name</label>
+    <input type="text" id="reviewName" placeholder="Enter your name">
+
+    <label id="ratingLabel">Your Rating</label>
+    <div class="rating-input" id="ratingInput">
+        <button type="button" data-rating="1">★</button>
+        <button type="button" data-rating="2">★</button>
+        <button type="button" data-rating="3">★</button>
+        <button type="button" data-rating="4">★</button>
+        <button type="button" data-rating="5">★</button>
+    </div>
+
+    <label for="reviewText">Your Feedback</label>
+    <textarea id="reviewText" rows="4"
+        placeholder="Share your experience with QuickForm..."></textarea>
+
+    <button type="button" id="submitReview">
+        Submit Review →
+    </button>
+
+</div>
+
+    </div>
+
+</div>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-content">
+
+            <div class="footer-logo">
+                <h2>⚡ QuickForm <span>Tools</span></h2>
+                <p>Simple Tools. Big Help.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="#">Home</a>
+                <a href="#about">About</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Contact</a>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            <p>© 2026 QuickForm Tools. All rights reserved.</p>
+        </div>
+
+    </footer>
+    
+    <script src="script.js"></script>
+
+</body>
+</html>

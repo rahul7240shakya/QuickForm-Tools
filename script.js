@@ -560,7 +560,7 @@ compressPdfBtn.addEventListener("click", async function(event) {
 // Send PDF to Node.js backend
 console.log("Sending PDF to backend...");
 
-const response = await fetch("http://localhost:3000/compress-pdf", {
+const response = await fetch("https://quickform-tools.onrender.com/compress-pdf", {
     method: "POST",
     body: formData
 });
@@ -866,7 +866,7 @@ resizeImageBtn.addEventListener("click", async function() {
 
     try {
 
-        const response = await fetch("http://localhost:3000/resize-image", {
+        const response = await fetch("https://quickform-tools.onrender.com/resize-image", {
             method: "POST",
             body: formData
         });
@@ -934,7 +934,7 @@ compressImageBtn.addEventListener("click", async function() {
 
     try {
 
-        const response = await fetch("http://localhost:3000/compress-image", {
+        const response = await fetch("https://quickform-tools.onrender.com/compress-image", {
             method: "POST",
             body: formData
         });

@@ -14,6 +14,18 @@ const toolCards = document.querySelectorAll(".tool-card");
 const toolsContainer = document.querySelector(".tools-container");
 
 // =====================================
+// GOOGLE ANALYTICS TOOL TRACKING
+// =====================================
+
+function trackToolUsage(toolName) {
+    if (typeof gtag === "function") {
+        gtag("event", "tool_used", {
+            tool_name: toolName
+        });
+    }
+}
+
+// =====================================
 // INLINE NOTIFICATION FUNCTION
 // =====================================
 
@@ -228,6 +240,8 @@ wordCounterCard.addEventListener("click", function(event) {
     // Prevent unwanted scrolling
     event.preventDefault();
 
+    trackToolUsage("Word Counter");
+
     // Open Word Counter popup
     openModal();
 
@@ -316,6 +330,8 @@ function closeCaseModal() {
 caseConverterLink.addEventListener("click", function(event) {
 
     event.preventDefault();
+
+    trackToolUsage("Case Converter");
 
     openCaseModal();
 
@@ -454,6 +470,8 @@ function closePdfModal() {
 pdfCompressorLink.addEventListener("click", function(event) {
 
     event.preventDefault();
+
+    trackToolUsage("PDF Compressor");
 
     openPdfModal();
 
@@ -925,6 +943,8 @@ compressImageBtn.addEventListener("click", async function() {
         // alert"Please select an image first.");
         return;
     }
+
+    trackToolUsage("Image Compressor");
 
     const formData = new FormData();
     formData.append("file", file);

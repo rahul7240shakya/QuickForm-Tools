@@ -10,13 +10,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends ghostscript \
 WORKDIR /app
 
 # Copy package files
-COPY package*.json ./
+COPY backend/package*.json ./
 
 # Install production dependencies
 RUN npm ci --omit=dev
 
 # Copy backend source code
-COPY . .
+COPY backend/. .
 
 # Create required folders
 RUN mkdir -p uploads processed compressed

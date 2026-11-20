@@ -1079,7 +1079,7 @@ const reviewText = document.getElementById("reviewText");
 const reviewsContainer = document.getElementById("reviewsContainer");
 
 const reviewStorageKey = "quickformReviews";
-
+const API_BASE_URL = "https://quickform-tools.onrender.com";
 // Load Saved Reviews
 function getSavedReviews() {
     try {
@@ -1117,6 +1117,48 @@ function getSavedReviews() {
         return [];
     }
 }
+
+//Review
+
+
+async function loadReviewsFromServer() {
+
+    try {
+
+        const response = await fetch(`${API_BASE_URL}/reviews`);
+
+        if (!response.ok) {
+            throw new Error("Failed to load reviews");
+        }
+
+        const data = await response.json();
+
+        const reviews = data.map(review => ({
+            id: String(review.id),
+            name: review.name,
+            rating: Number(review.rating),
+            feedback: review.comment,
+            timestamp: new Date(review.created_at).getTime(),
+            helpful: review.helpful || 0,
+            helpfulBy: review.helpful_by || []
+        }));
+
+        localStorage.setItem(
+            reviewStorageKey,
+            JSON.stringify(reviews)
+        );
+
+        displayReviews();
+
+    } catch (error) {
+
+        console.error("Reviews Loading Error:", error);
+        displayReviews();
+
+    }
+
+}
+
 
 // Display Reviews
 function displayReviews() {
@@ -1199,33 +1241,44 @@ helpfulButton.textContent = hasVoted
 
 helpfulButton.disabled = hasVoted;
 
-helpfulButton.addEventListener("click", function() {
 
-    const currentReviews = getSavedReviews();
+helpfulButton.addEventListener("click", async function() {
 
-    const currentReview = currentReviews.find(
-        item => item.id === review.id
-    );
+    try {
 
-    if (!currentReview) {
-        return;
+        const response = await fetch(
+            `${API_BASE_URL}/reviews/${review.id}/helpful`,
+            {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    visitorId: visitorId
+                })
+            }
+        );
+
+        if (response.status === 409) {
+            alert("You have already marked this review helpful.");
+            return;
+        }
+
+        if (!response.ok) {
+            throw new Error("Helpful update failed");
+        }
+
+        await loadReviewsFromServer();
+
+    } catch (error) {
+
+        console.error("Helpful Error:", error);
+        alert("Could not update Helpful vote. Please try again.");
+
     }
-
-    if (currentReview.helpfulBy.includes(visitorId)) {
-        return;
-    }
-
-    currentReview.helpfulBy.push(visitorId);
-    currentReview.helpful++;
-
-    localStorage.setItem(
-        reviewStorageKey,
-        JSON.stringify(currentReviews)
-    );
-
-    displayReviews();
 
 });
+
 
 reviewCard.appendChild(helpfulButton);
 
@@ -1281,7 +1334,7 @@ reviewCard.appendChild(helpfulButton);
 }
 
 // Submit Review
-submitReview.addEventListener("click", function() {
+submitReview.addEventListener("click", async function() {
 
     const name = reviewName.value.trim();
     const feedback = reviewText.value.trim();
@@ -1296,25 +1349,45 @@ submitReview.addEventListener("click", function() {
         return;
     }
 
-    // Save New Review
-    const savedReviews = getSavedReviews();
+    
+    // Save New Review to Backend
 
-    savedReviews.unshift({
-    id: Date.now().toString() + Math.random().toString(36).slice(2),
-    name: name,
-    rating: selectedRating,
-    feedback: feedback,
-    timestamp: Date.now(),
-    helpful: 0,
-    helpfulBy: []
-    });
-    localStorage.setItem(
-        reviewStorageKey,
-        JSON.stringify(savedReviews)
-    );
+    let visitorId = localStorage.getItem("quickformVisitorId");
 
-    // Refresh Review Display
-    displayReviews();
+    if (!visitorId) {
+        visitorId = Date.now().toString() + Math.random().toString(36).slice(2);
+        localStorage.setItem("quickformVisitorId", visitorId);
+    }
+
+    try {
+
+        const response = await fetch(`${API_BASE_URL}/reviews`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: name,
+                rating: selectedRating,
+                comment: feedback,
+                user_id: visitorId
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error("Review submission failed");
+        }
+
+        await loadReviewsFromServer();
+
+    } catch (error) {
+
+        console.error("Review Submit Error:", error);
+        alert("Review could not be submitted. Please try again.");
+        return;
+
+    }
+
 
     // Reset Form
     reviewName.value = "";
@@ -1328,8 +1401,7 @@ submitReview.addEventListener("click", function() {
 });
 
 // Load Reviews When Page Opens
-displayReviews();
-
+loadReviewsFromServer();
 // =====================================
 // DARK MODE FUNCTIONALITY
 // =====================================

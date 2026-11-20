@@ -10,6 +10,14 @@ const sharp = require("sharp");
 
 const cors = require("cors");
 
+// Supabase client
+const { createClient } = require("@supabase/supabase-js");
+
+const supabase = createClient(
+    process.env.SUPABASE_URL,
+    process.env.SUPABASE_SECRET_KEY
+);
+
 // Child Process ko import karna
 const { execFile } = require("child_process");
 
@@ -34,7 +42,7 @@ const ghostscriptPath = process.platform === "win32"
 
 // Express application create kar rahe hain
 const app = express();
-
+app.use(express.json());
 // Enable CORS
 app.use(cors());
 
@@ -68,6 +76,123 @@ const PORT = process.env.PORT || 3000;
 app.get("/", (req, res) => {
     res.send("QuickForm Tools Backend is Running!");
 });
+
+// Get all reviews from Supabase
+app.get("/reviews", async (req, res) => {
+
+    try {
+
+        const { data, error } = await supabase
+            .from("reviews")
+            .select("*")
+            .order("created_at", { ascending: false });
+
+        if (error) {
+            console.error("Reviews Fetch Error:", error);
+            return res.status(500).json({ error: "Failed to fetch reviews" });
+        }
+
+        res.json(data);
+
+    } catch (error) {
+
+        console.error(error);
+        res.status(500).json({ error: "Server error" });
+
+    }
+
+});
+
+// Submit a new review to Supabase
+app.post("/reviews", async (req, res) => {
+
+    try {
+
+        const { name, category, rating, comment, user_id } = req.body;
+
+        const { data, error } = await supabase
+            .from("reviews")
+            .insert([
+                {
+                    name,
+                    category,
+                    rating,
+                    comment,
+                    helpful: 0,
+                    user_id
+                }
+            ])
+            .select();
+
+        if (error) {
+            console.error("Review Submit Error:", error);
+            return res.status(500).json({ error: "Failed to submit review" });
+        }
+
+        res.status(201).json(data[0]);
+
+    } catch (error) {
+
+        console.error(error);
+        res.status(500).json({ error: "Server error" });
+
+    }
+
+});
+
+
+// Update helpful count
+app.patch("/reviews/:id/helpful", async (req, res) => {
+
+    try {
+
+        const { id } = req.params;
+        const { visitorId } = req.body;
+
+        if (!visitorId) {
+            return res.status(400).json({ error: "Visitor ID is required" });
+        }
+
+        const { data: review, error: fetchError } = await supabase
+            .from("reviews")
+            .select("helpful, helpful_by")
+            .eq("id", id)
+            .single();
+
+        if (fetchError || !review) {
+            return res.status(404).json({ error: "Review not found" });
+        }
+
+        const helpfulBy = review.helpful_by || [];
+
+        if (helpfulBy.includes(visitorId)) {
+            return res.status(409).json({ error: "Already voted" });
+        }
+
+        helpfulBy.push(visitorId);
+
+        const { data, error } = await supabase
+            .from("reviews")
+            .update({
+                helpful: (review.helpful || 0) + 1,
+                helpful_by: helpfulBy
+            })
+            .eq("id", id)
+            .select();
+
+        if (error) throw error;
+
+        res.json(data[0]);
+
+    } catch (error) {
+
+        console.error("Helpful Update Error:", error);
+        res.status(500).json({ error: "Failed to update helpful count" });
+
+    }
+
+});
+
 
 
 // File Upload API

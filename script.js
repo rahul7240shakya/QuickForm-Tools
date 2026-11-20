@@ -1260,7 +1260,6 @@ helpfulButton.addEventListener("click", async function() {
         );
 
         if (response.status === 409) {
-            alert("You have already marked this review helpful.");
             return;
         }
 
